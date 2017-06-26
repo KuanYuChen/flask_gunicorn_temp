@@ -1,0 +1,12 @@
+
+server {
+    listen 8080;
+    #server_name IP;
+    server_name _;
+
+
+    location / {
+        include proxy_params;
+        proxy_pass http://unix:/home/pi/flask_gunicorn_temp/fgtapp.sock;
+    }
+}

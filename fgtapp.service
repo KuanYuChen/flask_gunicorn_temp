@@ -1,0 +1,13 @@
+[Unit]
+Description=Gunicorn instance to serve myapp
+After=network.target
+
+[Service]
+User=pi
+Group=www-data
+WorkingDirectory=/home/pi/flask_gunicorn_temp
+Environment="PATH=/home/pi/pyenv/bin"
+ExecStart=/home/pi/pyenv/bin/gunicorn --workers 3 --bind unix:fgtapp.sock -m 007 wsgi:app
+
+[Install]
+WantedBy=multi-user.target
