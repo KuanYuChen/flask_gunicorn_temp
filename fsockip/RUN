@@ -1,2 +1,7 @@
 gunicorn --worker-class eventlet -w 1 app:app
 gunicorn --worker-class eventlet -b 0.0.0.0 -w 1 app:app
+
+sudo cp fsockip.service /etc/systemd/system/
+sudo systemctl enable fsockip.service
+sudo systemctl start fsockip.service
+
