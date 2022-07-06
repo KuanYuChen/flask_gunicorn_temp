@@ -1,6 +1,6 @@
 chardet==2.3.0
 colorama==0.3.2
-html5lib==0.999
+html5lib==0.999999999
 requests==2.4.3
 six==1.8.0
 urllib3==1.9.1
